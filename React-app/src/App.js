@@ -16,24 +16,24 @@ function App() {
   const [id,setId]=useState(null);
   const [nextId, setNextId]=useState(4);
   const [topics, setTopics] =useState ([
-    { id: 1, title: 'html', body: 'html is ...', img: html },
-    { id: 2, title: 'css', body: 'css is ...', img:css },
-    { id: 3, title: 'javascript', body: 'javascript is ...', img:js },
+    { id: 1, title: 'html', body: 'html is ...', image: html },
+    { id: 2, title: 'css', body: 'css is ...', image:css },
+    { id: 3, title: 'javascript', body: 'javascript is ...', image:js },
   ]);
   let content=null;
   let contextControl=null;
   if(mode==='WELCOME'){
-    content=<Article title="WEB" body="이 웹사이트는 웹프로그래밍 할 때 필요한 지식을 정리한 사이트입니다." img={web}></Article>;
+    content=<Article title="WEB" body="이 웹사이트는 웹프로그래밍 할 때 필요한 지식을 정리한 사이트입니다." image={web}></Article>;
   }else if(mode==='READ'){
-    let title, body, img=null;
+    let title, body, image=null;
     for(let i=0;i<topics.length;i++){
       if(topics[i].id === id){
         title=topics[i].title;
         body=topics[i].body;
-        img=topics[i].img;
+        image=topics[i].image;
       }
     }
-    content=<Article title={title} body={body} img={img}></Article>;
+    content=<Article title={title} body={body} image={image}></Article>;
     contextControl=<>
       <a href={"/update/"+id} className="Control" onClick={event=>{
       event.preventDefault();
@@ -55,8 +55,8 @@ function App() {
     }}/></div>
     </>;
   } else if(mode==='CREATE'){
-    content = <Create onCreate={(_title, _body)=>{
-      const newTopic={id:nextId,title:_title, body:_body};
+    content = <Create onCreate={(_title, _body, _img)=>{
+      const newTopic={id:nextId,title:_title, body:_body, image:_img};
       const newTopics=[...topics];
       newTopics.push(newTopic);
       setTopics(newTopics);
