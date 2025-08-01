@@ -65,16 +65,17 @@ function App() {
       setNextId(nextId+1);
     }}></Create>
   } else if(mode==='UPDATE'){
-    let title, body=null;
+    let title, body,image=null;
     for(let i=0;i<topics.length;i++){
       if(topics[i].id === id){
         title=topics[i].title;
         body=topics[i].body;
+        image=topics[i].image;
       }
     }
-    content=<Update title={title} body={body} onUpdate={(title,body)=>{
+    content=<Update title={title} body={body} image={image} onUpdate={(title,body,image)=>{
       const newTopics=[...topics];
-      const updatedTopic={id:id,title:title, body:body};
+      const updatedTopic={id:id,title:title, body:body, image:image};
       for(let i=0;i<newTopics.length; i++){
         if(newTopics[i].id === id){
           newTopics[i]=updatedTopic;

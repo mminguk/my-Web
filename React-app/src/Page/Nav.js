@@ -12,9 +12,9 @@ function Nav(props) {
     );
   }
   return (
-    <nav>
+    <div id="nav"> 
       <ol>{lis}</ol>
-    </nav>
+    </div>
   );
 }
 

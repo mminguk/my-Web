@@ -6,10 +6,7 @@ function Create(props){
       if(window.confirm('생성하시겠습니까?')){
         const title = event.target.title.value;
         const body = event.target.body.value;
-        const file=event.target.image.files;
-        const reader=new FileReader();
-        const blob=new Blob(file);
-        const image=JSON.stringify(reader.readAsDataURL(blob));
+        const image=URL.createObjectURL(event.target.image.files[0]);
         props.onCreate(title,body,image);
       }
     }}>

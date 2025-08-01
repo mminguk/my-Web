@@ -3,19 +3,28 @@ body{
     background-color: gray;
     color: white;
 }
+a{
+    text-decoration: none;
+}
 h1{
     margin: 0;
     padding: 20px 20px;
 }
 header{
-    background-color: lightblue;
+    background-color: rgb(173, 216, 230);
     text-align: center;
 }
-nav{
-    text-align: center;
-    margin: 0 auto;
-    width: 500px;
-    height: 250px;
+#nav>ol{
+    display: flex;
+    margin: 0;
+    padding: 20px 20px;
+    justify-content: space-around;
+    list-style: none;
+    background-color: darkblue;
+}
+li>a{
+    color: white;
+    text-decoration: none;
 }
 article{
     text-align: center;
