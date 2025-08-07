@@ -1,0 +1,16 @@
+a{
+    margin: auto;
+
+}
+#container{
+    display: flex;
+    background-color: powderblue;
+    color: white;
+    
+}
+.item{
+    margin: 5px;
+}
+#content{
+    display: flex;
+}
